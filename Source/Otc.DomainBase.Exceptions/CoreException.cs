@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 
 namespace Otc.DomainBase.Exceptions
 {
+    [Serializable]
     public abstract class CoreException : Exception
     {
         protected CoreException(string message)
@@ -23,6 +24,7 @@ namespace Otc.DomainBase.Exceptions
         public IEnumerable<CoreError> Errors { get { return errors; } }
     }
 
+    [Serializable]
     public abstract class CoreException<T> : CoreException
         where T : CoreError
     {
